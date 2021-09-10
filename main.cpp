@@ -48,7 +48,6 @@
 **
 ****************************************************************************/
 
-//! [0]
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
@@ -58,9 +57,6 @@
 int main(int argc, char *argv[])
 {
     Q_INIT_RESOURCE(application);
-#ifdef Q_OS_ANDROID
-    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
 
     QApplication app(argc, argv);
     QCoreApplication::setOrganizationName("QtProject");
@@ -79,4 +75,3 @@ int main(int argc, char *argv[])
     mainWin.show();
     return app.exec();
 }
-//! [0]
