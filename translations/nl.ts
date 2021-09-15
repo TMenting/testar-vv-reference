@@ -194,8 +194,10 @@ Wilt u de wijzigingen opslaan?</translation>
         <translation>Bestand opgeslagen</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="394"/>
         <source>English</source>
-        <translation type="vanished">Nederlands</translation>
+        <translation>Nederlands</translation>
     </message>
 </context>
 </TS>

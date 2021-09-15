@@ -52,10 +52,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTranslator>
+
+#include <memory>
 
 QT_BEGIN_NAMESPACE
 class QAction;
-class QMenu;
 class QPlainTextEdit;
 class QSessionManager;
 QT_END_NAMESPACE
@@ -66,8 +68,12 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow();
-
     void loadFile(const QString &fileName);
+    static QMap<QString, QString> availableLanguages();
+    void loadLanguage(const QString &translationFile);
+
+signals:
+    void languageChanged(const QString &translationFile);
 
 protected:
     void closeEvent(QCloseEvent *event) override;
@@ -89,10 +95,15 @@ private:
     bool maybeSave();
     bool saveFile(const QString &fileName);
     void setCurrentFile(const QString &fileName);
-    QString strippedName(const QString &fullFileName);
 
+    QString strippedName(const QString &fullFileName);
+    static QStringList findQmFiles();
+    static QString languageName(const QString &qmFile);
+
+    static const QString langSettingsKey;
     QPlainTextEdit *textEdit;
     QString curFile;
+    std::unique_ptr<QTranslator> translator;
 };
 
 #endif

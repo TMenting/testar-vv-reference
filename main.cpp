@@ -51,6 +51,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QSettings>
 
 #include "mainwindow.h"
 
@@ -66,12 +67,33 @@ int main(int argc, char *argv[])
     parser.setApplicationDescription(QCoreApplication::applicationName());
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addPositionalArgument("file", "The file to open.");
+    QString filePath;
+    QCommandLineOption fileOption("file", "The file to open.", filePath);
+    parser.addOption(fileOption);
+    auto supportedLanguages = MainWindow::availableLanguages();
+    QString description("The application language:");
+    for (auto lang : supportedLanguages.keys()) {
+        description.append(QString("\n- %1").arg(lang));
+        if (lang == supportedLanguages.keys().first()) {
+            description.append(" default");
+        }
+    }
+
+    QCommandLineOption langOption("lang", description, "", supportedLanguages.keys().first());
+    parser.addOption(langOption);
     parser.process(app);
 
     MainWindow mainWin;
-    if (!parser.positionalArguments().isEmpty())
-        mainWin.loadFile(parser.positionalArguments().first());
+    if (parser.isSet(fileOption)) {
+        mainWin.loadFile(parser.value(fileOption));
+    }
+
+    if (parser.isSet(langOption)) {
+        QString transFile = supportedLanguages.value(parser.value(langOption));
+        mainWin.loadLanguage(transFile);
+        mainWin.languageChanged(transFile);
+    }
+
     mainWin.show();
     return app.exec();
 }

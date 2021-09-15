@@ -11,7 +11,3 @@ TRANSLATIONS += translations/en.ts \
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/widgets/mainwindows/application
 INSTALLS += target
-
-DISTFILES += \
-    translations/en.ts \
-    translations/nl.ts

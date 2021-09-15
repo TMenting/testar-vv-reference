@@ -194,8 +194,10 @@ Do you want to save your changes?</translation>
         <translation>File saved</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="394"/>
         <source>English</source>
-        <translation type="vanished">English</translation>
+        <translation>English</translation>
     </message>
 </context>
 </TS>
