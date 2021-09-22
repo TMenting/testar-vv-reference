@@ -122,10 +122,15 @@ bool MainWindow::saveAs()
 
 void MainWindow::about()
 {
-    QMessageBox::about(this, tr("About Application"),
-                       tr("The <b>Application</b> example demonstrates how to "
-                          "write modern GUI applications using Qt, with a menu bar, "
-                          "toolbars, and a status bar."));
+    QMessageBox about(this);
+    // Presentation failure #1: Limit the scentence to two lines.
+    about.setStyleSheet("QLabel{max-height: 50px;}");
+    about.setWindowTitle(tr("About Application"));
+    about.setText(tr("The <b>Application</b> example demonstrates how to "
+                     "write modern GUI applications using Qt, with a menu bar, "
+                     "toolbars, and a status bar."));
+    about.setToolTip(about.text());
+    about.exec();
 }
 
 void MainWindow::documentWasModified()
@@ -202,6 +207,8 @@ void MainWindow::createActions()
     copyAct->setEnabled(false);
     connect(textEdit, &QPlainTextEdit::copyAvailable, cutAct, &QAction::setEnabled);
     connect(textEdit, &QPlainTextEdit::copyAvailable, copyAct, &QAction::setEnabled);
+    // Presentation failure #2: Cut off the last two charachters from the "About Qt" entry.
+    helpMenu->setFixedWidth(100);
 
     for (auto item : findQmFiles()){
         QAction* languageSelection = languageMenu->addAction(languageName(item));
@@ -216,6 +223,9 @@ void MainWindow::createActions()
             emit languageChanged(translationFile);
         });
     }
+
+    activeLabel = new QLabel(tr("Active"));
+    statusBar()->addPermanentWidget(activeLabel);
 
     connect(this, &MainWindow::languageChanged, this, [=](const QString & translationFile){
         // Load translation
@@ -259,7 +269,22 @@ void MainWindow::createActions()
 
         aboutQtAct->setText(tr("About &Qt"));
         aboutQtAct->setStatusTip(tr("Show the Qt library's About box"));
+
+        updateActiveLabel();
     });
+}
+
+void MainWindow::showEvent(QShowEvent *){
+    // Set the size when the window is shown for the first time.
+    updateActiveLabel();
+}
+
+void MainWindow::updateActiveLabel(){
+    // Presentation failure #3: Strip the last character.
+    QString text = tr("Active");
+    activeLabel->setText(text);
+    int cutOffWidth = activeLabel->fontMetrics().horizontalAdvance(text, text.length()-1);
+    activeLabel->setFixedWidth(cutOffWidth);
 }
 
 void MainWindow::loadLanguage(const QString &translationFile){

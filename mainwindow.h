@@ -58,6 +58,7 @@
 
 QT_BEGIN_NAMESPACE
 class QAction;
+class QLabel;
 class QPlainTextEdit;
 class QSessionManager;
 QT_END_NAMESPACE
@@ -95,6 +96,8 @@ private:
     bool maybeSave();
     bool saveFile(const QString &fileName);
     void setCurrentFile(const QString &fileName);
+    void updateActiveLabel();
+    void showEvent(QShowEvent *event) override;
 
     QString strippedName(const QString &fullFileName);
     static QStringList findQmFiles();
@@ -104,6 +107,7 @@ private:
     QPlainTextEdit *textEdit;
     QString curFile;
     std::unique_ptr<QTranslator> translator;
+    QLabel *activeLabel;
 };
 
 #endif
