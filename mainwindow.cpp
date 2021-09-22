@@ -224,7 +224,7 @@ void MainWindow::createActions()
         });
     }
 
-    activeLabel = new QLabel(tr("Active"));
+    activeLabel = new QLabel(tr("Active..."));
     statusBar()->addPermanentWidget(activeLabel);
 
     connect(this, &MainWindow::languageChanged, this, [=](const QString & translationFile){
@@ -281,7 +281,7 @@ void MainWindow::showEvent(QShowEvent *){
 
 void MainWindow::updateActiveLabel(){
     // Presentation failure #3: Strip the last character.
-    QString text = tr("Active");
+    QString text = tr("Active...");
     activeLabel->setText(text);
     int cutOffWidth = activeLabel->fontMetrics().horizontalAdvance(text, text.length()-1);
     activeLabel->setFixedWidth(cutOffWidth);

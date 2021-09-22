@@ -69,7 +69,7 @@
         <translation>Save the document under a new name</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="172"/>
+        <location filename="../mainwindow.cpp" line="173"/>
         <location filename="../mainwindow.cpp" line="247"/>
         <source>E&amp;xit</source>
         <translation>E&amp;xit</translation>
@@ -80,18 +80,18 @@
         <translation>Exit the application</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="175"/>
+        <location filename="../mainwindow.cpp" line="176"/>
         <location filename="../mainwindow.cpp" line="250"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="176"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="179"/>
+        <location filename="../mainwindow.cpp" line="180"/>
         <location filename="../mainwindow.cpp" line="252"/>
         <source>Cu&amp;t</source>
         <translation>Cu&amp;t</translation>
@@ -102,7 +102,7 @@
         <translation>Cut the current selection&apos;s contents to the clipboard</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="186"/>
+        <location filename="../mainwindow.cpp" line="187"/>
         <location filename="../mainwindow.cpp" line="256"/>
         <source>&amp;Copy</source>
         <translation>&amp;Copy</translation>
@@ -113,7 +113,7 @@
         <translation>Copy the current selection&apos;s contents to the clipboard</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="193"/>
+        <location filename="../mainwindow.cpp" line="194"/>
         <location filename="../mainwindow.cpp" line="260"/>
         <source>&amp;Paste</source>
         <translation>&amp;Paste</translation>
@@ -124,19 +124,19 @@
         <translation>Paste the clipboard&apos;s contents into the current selection</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="201"/>
+        <location filename="../mainwindow.cpp" line="202"/>
         <location filename="../mainwindow.cpp" line="264"/>
         <source>&amp;Language</source>
         <translation>&amp;Language</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="202"/>
+        <location filename="../mainwindow.cpp" line="203"/>
         <location filename="../mainwindow.cpp" line="266"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="203"/>
+        <location filename="../mainwindow.cpp" line="204"/>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>&amp;About</source>
         <translation>&amp;About</translation>
@@ -147,16 +147,10 @@
         <translation>Show the application&apos;s About box</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="204"/>
+        <location filename="../mainwindow.cpp" line="205"/>
         <location filename="../mainwindow.cpp" line="270"/>
         <source>About &amp;Qt</source>
         <translation>About &amp;Qt</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="226"/>
-        <location filename="../mainwindow.cpp" line="274"/>
-        <source>Active</source>
-        <translation>Active</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="271"/>
@@ -164,58 +158,64 @@
         <translation>Show the Qt library&apos;s About box</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="293"/>
+        <location filename="../mainwindow.cpp" line="227"/>
+        <location filename="../mainwindow.cpp" line="284"/>
+        <source>Active...</source>
+        <translation>Active...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="301"/>
         <source>Ready</source>
         <translation>Ready</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="324"/>
-        <location filename="../mainwindow.cpp" line="343"/>
-        <location filename="../mainwindow.cpp" line="378"/>
+        <location filename="../mainwindow.cpp" line="332"/>
+        <location filename="../mainwindow.cpp" line="351"/>
+        <location filename="../mainwindow.cpp" line="386"/>
         <source>Application</source>
         <translation>Application</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="325"/>
+        <location filename="../mainwindow.cpp" line="333"/>
         <source>The document has been modified.
 Do you want to save your changes?</source>
         <translation>The document has been modified.
 Do you want to save your changes?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="344"/>
+        <location filename="../mainwindow.cpp" line="352"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Cannot read file %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="355"/>
+        <location filename="../mainwindow.cpp" line="363"/>
         <source>File loaded</source>
         <translation>File loaded</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="368"/>
+        <location filename="../mainwindow.cpp" line="376"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Cannot write file %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="372"/>
+        <location filename="../mainwindow.cpp" line="380"/>
         <source>Cannot open file %1 for writing:
 %2.</source>
         <translation>Cannot open file %1 for writing:
 %2.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="383"/>
+        <location filename="../mainwindow.cpp" line="391"/>
         <source>File saved</source>
         <translation>File saved</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="439"/>
-        <location filename="../mainwindow.cpp" line="443"/>
+        <location filename="../mainwindow.cpp" line="447"/>
+        <location filename="../mainwindow.cpp" line="451"/>
         <source>English</source>
         <translation>English</translation>
     </message>
