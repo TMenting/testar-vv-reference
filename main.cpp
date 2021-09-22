@@ -68,18 +68,19 @@ int main(int argc, char *argv[])
     parser.addHelpOption();
     parser.addVersionOption();
     QString filePath;
-    QCommandLineOption fileOption("file", "The file to open.", filePath);
+    QCommandLineOption fileOption(QStringList() << "f" << "file", "The file to open.", "filePath", filePath);
     parser.addOption(fileOption);
     auto supportedLanguages = MainWindow::availableLanguages();
     QString description("The application language:");
     for (auto lang : supportedLanguages.keys()) {
         description.append(QString("\n- %1").arg(lang));
         if (lang == supportedLanguages.keys().first()) {
-            description.append(" default");
+            description.append(" (default)");
         }
     }
 
-    QCommandLineOption langOption("lang", description, "", supportedLanguages.keys().first());
+    QCommandLineOption langOption(QStringList() << "l" << "lang", description, "language", supportedLanguages.keys().first());
+
     parser.addOption(langOption);
     parser.process(app);
 
